@@ -15,7 +15,7 @@ double priceOfSocks=sockCost$*nSocks; //Calculates the total costs of socks befo
 System.out.println("$"+ priceOfSocks+ " is the cost of socks before tax.");
 double taxForSocks= priceOfSocks* taxPercent; // Calculates the sales tax on the socks
 System.out.println("$"+ taxForSocks+ " is the sales tax of the socks.");
-double totalCostOfSocks=priceOfSocks + taxForSocks;
+double totalCostOfSocks=priceOfSocks + taxForSocks; //Calculates the total cost of socks including sales tax
 System.out.println("$"+ totalCostOfSocks+ " is the total amount the socks cost including the sales tax.");
 
 int nGlasses=6; //Number of drinking glasses
@@ -26,7 +26,7 @@ double priceOfGlasses = nGlasses*glassCost$; //Calculates the cost of Glasses be
 System.out.println("$"+ priceOfGlasses+ " is the cost of glasses before tax.");
 double taxForGlasses= priceOfGlasses*taxPercent; //Calculates the sales tax on the glasses
 System.out.println("$"+ taxForGlasses+ " is the sales tax of the glasses.");
-double totalCostOfGlasses= taxForGlasses+priceOfGlasses; //Calculates the total cost of the glasses
+double totalCostOfGlasses= taxForGlasses+priceOfGlasses; //Calculates the total cost of the glasses including the sales tax
 System.out.println("$"+ totalCostOfGlasses+ " is the total amount the glasses cost including the sales tax.");
 
 int nEnvelopes=1; //Number of boxes of envelopes
@@ -37,7 +37,7 @@ double priceOfEnvelopes= nEnvelopes*envelopeCost$; //Calculates the cost of enve
 System.out.println("$"+ priceOfEnvelopes+ " is the cost of envelopes before tax.");
 double taxForEnvelopes= taxPercent*priceOfEnvelopes; //Calculates the sales tax on the envelopes
 System.out.println("$"+ taxForEnvelopes+ " is the sales tax of the envelopes.");
-double totalCostOfEnvelopes= taxForEnvelopes+priceOfEnvelopes; //Calulates the total cost of the envelopes
+double totalCostOfEnvelopes= taxForEnvelopes+priceOfEnvelopes; //Calulates the total cost of the envelopes including tax
 System.out.println("$"+ totalCostOfEnvelopes+ " is the total amount the envelopes cost including the sales tax.");
 
 double totalBeforeTax= priceOfEnvelopes+priceOfGlasses+priceOfSocks; //Calculates the total of the purchase before tax
