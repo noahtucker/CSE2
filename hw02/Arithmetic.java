@@ -2,6 +2,7 @@
 // CSE2 HW02
 // 10/9/14
 
+// The program is called Arithmetic. 
 //This program should calculate the price before sales tax, 
 //the sales tax, and the cost of socks, drinking glasses and envelopes. 
 
