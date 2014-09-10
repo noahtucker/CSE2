@@ -19,9 +19,13 @@ System.out.println("A pair of socks cost $2.58 per pair.");
 double priceOfSocks=sockCost$*nSocks; //Calculates the total costs of socks before tax
 System.out.println("$"+ priceOfSocks+ " is the cost of socks before tax.");
 double taxForSocks= priceOfSocks* taxPercent; // Calculates the sales tax on the socks
+int taxForSocks$ = (int) (taxForSocks*100); // Converting to 2 digits after the decimal place
+taxForSocks = (double) taxForSocks$/100.0; // Converting to 2 digits after the decimal place
 System.out.println("$"+ taxForSocks+ " is the sales tax of the socks.");
 double totalCostOfSocks=priceOfSocks + taxForSocks; //Calculates the total cost of socks including sales tax
-System.out.println("$"+ totalCostOfSocks+ " is the total amount the socks cost including the sales tax.");
+int totalCostOfSocks$ = (int) (totalCostOfSocks*100); // Converting to 2 digits after the decimal place
+totalCostOfSocks = (double) totalCostOfSocks$/100.0; // Converting to 2 digits after the decimal place
+System.out.println("$"+ totalCostOfSocks+ "0 is the total amount the socks cost including the sales tax.");
 
 //Here is where the total cost of drinking glasses is being calculated.
 int nGlasses=6; //Number of drinking glasses
@@ -31,6 +35,8 @@ System.out.println("Drinking glasses cost $2.29 per glass.");
 double priceOfGlasses = nGlasses*glassCost$; //Calculates the cost of Glasses before tax
 System.out.println("$"+ priceOfGlasses+ " is the cost of glasses before tax.");
 double taxForGlasses= priceOfGlasses*taxPercent; //Calculates the sales tax on the glasses
+int taxForGlasses$ = (int) (taxForGlasses*100); // Converting to 2 digits after the decimal place
+taxForGlasses = (double) taxForGlasses$/100.0; // Converting to 2 digits after the decimal place
 System.out.println("$"+ taxForGlasses+ " is the sales tax of the glasses.");
 double totalCostOfGlasses= taxForGlasses+priceOfGlasses; //Calculates the total cost of the glasses including the sales tax
 System.out.println("$"+ totalCostOfGlasses+ " is the total amount the glasses cost including the sales tax.");
@@ -43,14 +49,18 @@ System.out.println("A box of envelopes cost $3.25 per box.");
 double priceOfEnvelopes= nEnvelopes*envelopeCost$; //Calculates the cost of envelopes before tax
 System.out.println("$"+ priceOfEnvelopes+ " is the cost of envelopes before tax.");
 double taxForEnvelopes= taxPercent*priceOfEnvelopes; //Calculates the sales tax on the envelopes
+int taxForEnvelopes$ = (int) (taxForEnvelopes*100); // Converting to 2 digits after the decimal place
+taxForEnvelopes = (double) taxForEnvelopes$/100.0; // Converting to 2 digits after the decimal place
 System.out.println("$"+ taxForEnvelopes+ " is the sales tax of the envelopes.");
 double totalCostOfEnvelopes= taxForEnvelopes+priceOfEnvelopes; //Calulates the total cost of the envelopes including tax
 System.out.println("$"+ totalCostOfEnvelopes+ " is the total amount the envelopes cost including the sales tax.");
 
 //Here the total cost of the purchase (including all 3 items) is calculated 
 double totalBeforeTax= priceOfEnvelopes+priceOfGlasses+priceOfSocks; //Calculates the total of the purchase before tax
+int totalBeforeTax$ = (int) (totalBeforeTax*100); // Converting to 2 digits after the decimal place
+totalBeforeTax = (double) totalBeforeTax$/100.0; // Converting to 2 digits after the decimal place
 System.out.println("$"+ totalBeforeTax+ " is the total cost of the purchase before sales tax.");
 double totalCostOfPurchase= totalCostOfSocks+totalCostOfEnvelopes+totalCostOfGlasses; //Calculates the total of the purchase including tax
-System.out.println("$"+ totalCostOfPurchase+ " is the total cost of the purchase including sales tax.");
+System.out.println("$"+ totalCostOfPurchase+ "0 is the total cost of the purchase including sales tax.");
     }
 }
