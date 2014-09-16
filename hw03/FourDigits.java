@@ -9,54 +9,37 @@
 import java.util.Scanner; //Importing the scanner function from java 
 public class FourDigits{
     public static void main(String[] args){
+        
         Scanner myScanner; //Declares a variable for scanner
         myScanner= new Scanner (System.in); //Calling the scanner constructor 
         System.out.print("Enter a double and I display the four digits to the right of the decimal point: ");//Prompts the user to enter a double 
         double nFourDigits= myScanner.nextDouble(); //Tells the scanner to accept a double 
         
-        int tempDigitHolder= (int) nFourDigits;//Casting the number into an integer 
-        double bigNumber= nFourDigits-tempDigitHolder; //I am eliminating the number before the deicmal point
-         
-         //Here I will pull the first digit out of the inputted number 
-        double bigNumber1= bigNumber*10;// Pulls out the first digit
-        int digitCatcher4= (int)bigNumber1; //Changes number to integer to get the first digit 
-        
-        //Here I will pull the second digit out of the inputted number. 
-        //I will do this by multiplying the double created above by ten. 
-        //Then, subtracting out the integer value of the previous number.
-        //I will then multiply the new double by 10 and create an int. 
-        //This successfully pulls out the correct integer I need. 
-        double Eliminate4= (bigNumber*10);// Working to eliminate the first digit after the decimal point
-        double Eliminate4$= Eliminate4-digitCatcher4;
-        double bigNumber2= Eliminate4$*10;// Pulls out the first digit
-        int digitCatcher3= (int)bigNumber2; //Changes number to integer to get the first digit 
-        
-        //Here I will pull the second digit out of the inputted number. 
-        //I will do this by multiplying the double created above by ten. 
-        //Then, subtracting out the integer value of the previous number.
-        //I will then multiply the new double by 10 and create an int. 
-        //This successfully pulls out the correct integer I need. 
-        double Eliminate3= (Eliminate4$*10); 
-        double Eliminate3$= Eliminate3-digitCatcher3;
-        double bigNumber3= Eliminate3$*10;
-        int digitCatcher2= (int) bigNumber3; 
-        
-        
-        //Here I will pull the last digit out of the inputted number. 
-        //I will do this by multiplying the double created above by 100. 
-        //Then, subtracting out the integer value of the previous number.
-        //I will then multiply the new double by 10 and create an int. 
-        //This successfully pulls out the correct integer I need. 
-       
-        double Eliminate2= (Eliminate3$*100);// Working to eliminate rounding errors created by Java
-        double Eliminate2$= Eliminate2/10; //Working to eliminate rounding errors created by java 
-        
-        double Eliminate2$$= Eliminate2$-digitCatcher2;
-        double bigNumber4= Eliminate2$$*10;
-        int digitCatcher1= (int) bigNumber4; 
 
-        System.out.println("The first four digits after the decimal place is: " + digitCatcher4 + digitCatcher3 + digitCatcher2 + digitCatcher1);
+        double digit= nFourDigits*10000; //Attempting to extract digits by moving them across the decimal place
+       
+        int digit1= (int) digit; //Casting to an int to eliminate extraneous numbers 
+        double digit4= digit1%10; //Gets the fourth digit out 
+       
+       
+        double digit4$= digit1/10; //Divides the original number to help access the third digit 
+        int digit3= (int) digit4$; //Gets rid of the fourth digit after the decimal place
+        double digit3$= digit3%10; //Gets the thrid digit out 
+        int digit3Final= (int) digit3$; //Casts the third digit into an int. This will be printed out later. 
         
+        double digit3$$= digit4$/10; // Divides the number that was just printed to the other side of the decimal place
+        double digit2= (int) digit3$$; //Cast to an int to eliminate used digits
+        double digit2$= digit3$$%10; //Gets the second digit
+        int digit2Final= (int) digit2$; //Casts the second digit into an int. This will be printed out. 
+        
+        double digit2$$= digit3$$/10; //Divides the second digit across the decimal place 
+        double digit01= (int) digit2$$; //Eliminates the second digit by casting to an int
+        double digit01$= digit2$$%10; //Gets the last digit 
+        int digit01Final= (int) digit01$; //Casts the last digit into an int from a double 
+        
+        System.out.println("The first four digits after the decimal place is: "+ digit01Final +digit2Final+ digit3Final+ digit4); //Prints out the final answer!
+        
+
         
     }
 }
