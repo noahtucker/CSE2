@@ -22,7 +22,7 @@ public class Root{
         double guess7= (2*guess6*guess6*guess6+cubedRoot)/(3*guess6*guess6); //Sixth and final improvement on the guess for the cubed root of a number
         
         System.out.println("The cube root is " +guess7); //Prints out the answer to the cubed root of a number
-        double answer= guess7*guess7*guess7; 
+        double answer= guess7*guess7*guess7;  
         System.out.println(guess7 + "*" + guess7 + "*" + guess7 + "=" + answer);
     
     }
