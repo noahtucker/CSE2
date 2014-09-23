@@ -19,21 +19,24 @@ public class TimePadding{
         int hours= time/3600;//Divides the seconds entered into hours
         int standardHours= hours%100; //Pulls out the digits neccessary for hours
         
+        //Calculates minutes for the output
         int hoursIntoSeconds= standardHours*3600; //Changing hours back into seconds
         int minutesInSeconds= time- hoursIntoSeconds; //Subtracting original entered value from the number of seconds the hours have
         int minutes= minutesInSeconds/60; //Calculates the number of minutes 
         String paddedMinutes= String.format("%02d", minutes); //Puts an extra zero in the front if neccessary 
         
+        //Calculates the seconds for the output
         int minutesIntoSeconds= minutes*60; //Changes the minutes back to seconds
         int seconds= time-(hoursIntoSeconds+minutesIntoSeconds); //Calculates the seconds by subtracting the number of secodns in minutes and hours  
         String paddedSeconds= String.format("%02d", seconds);//Adds extra zeros if neccessary  
         
-        if(time>86400 || time<0){
-            System.out.println("Please enter a value with {0, 86400} (one day)");
-            return;
+        //Checks if the time entered is within one day
+        if(time>86400 || time<0){//Makes a range for one day 
+            System.out.println("Please enter a value with {0, 86400} (one day)");//Tells the user to enter another number
+            return;//Quits the program 
         }
         
-        System.out.println(standardHours + ":" + paddedMinutes + ":" + paddedSeconds); 
+        System.out.println(standardHours + ":" + paddedMinutes + ":" + paddedSeconds);//Gives the output in xx:xx:xx form  
        
        
     
