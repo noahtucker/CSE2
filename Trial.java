@@ -1,54 +1,21 @@
-// Noah Tucker
-// 9/19/14
-//CSE 2
-
-//This program will use the Scanner class to obtain, from users, how many Big Macs they want
-//and whether they want an order of fries. It will print out the total cost of the meal. 
-//Big Macs still cost $2.22 each,  and an order of fries costs $2.15. 
-
-import java.util.Scanner; 
-
-public class BigMacAgain{
+public class Trial{ 
     public static void main(String[] args){ 
-        Scanner myScanner; 
-        myScanner= new Scanner (System.in); 
-        System.out.print("Enter the number of Big Macs: ");//Prints out the number the user entered
-        int BigMacs= myScanner.nextInt(); //tells the scanner to accept an int
+        String a= ’mouse’;
+        String b = ’cat’;
+        int c= 17;
+        int d= 3;
         
-        double bigMacPrice= 2.22; //Telling the program that big macs cost 2.22
-        double friesPrice= 2.15; //Telling the program that fries cost 2.15
-       
-      
-        
-        if(myScanner.hasNextInt()){// If the user entered an int, continue with the program 
-            double costOfBigMacs= BigMacs*bigMacPrice; //Calculates the price of Big Macs
-       System.out.println("Do you want fries with that (Y/N/y/n): "); //Prompting the user to input data 
-       String answer= myScanner.next(); //Tells the scanner to accept strings 
-       
-       if (answer=="Y"||answer=="y") {
-            double costOfMeal= friesPrice+ costOfBigMacs; //Calculates the total cost of the meal with fries
-            System.out.println("Your total is: "+costOfMeal); //Prints out the value 
-       }
-       else if(answer=="N"||answer=="n"){
-            System.out.println("Your total is:"+ costOfBigMacs); //Calculates the total cost without fries
-       }
-        else{
-            System.out.println("Please enter Y,y,N or n.");
-        }
-            
-        }
-        else {
-            System.out.println("You did not enter an int"); //Tells the user that they entered the wrong data 
-            return; //Leaves the program 
-        } 
-        if(BigMacs<0){// If the user did not enter a positive int, an error message will appear
-            System.out.println("Please enter an integer greater than zero."); // Tells the user to enter the correct data
-            return; //Leaves the program  
-        }
-        else{
-            
-        }
-    
+int x = c + d; 
+System.out.println(x); 
+b + a
+c + d + a 
+a + d + c
+c % d= 2 
+2 ∗ 4 + d
+c == d 
+c + 14 == d
+b < a && c < d
+a < b || c > d
 
-        }
+    }
 }
