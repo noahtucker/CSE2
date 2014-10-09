@@ -17,6 +17,7 @@ public class BoolaBoola{
         
        double random= (Math.random()*32)+1;//Creating a random number range from (1,32.9999)
        int caseNumber= (int) random; //Changes the range to (1,32)
+        caseNumber= 25; 
            
        //Take the random number generated and put into the switch statement
        switch (caseNumber){
@@ -265,7 +266,6 @@ public class BoolaBoola{
            case 21:
                System.out.print("Does true || true && false have the value true(t/T) or false(f/F)?");
                String input21= myScanner.next(); 
-               boolean have21= true || true && false;
                if(input21.equals("t")||input21.equals("T")){
                    System.out.println("Correct");
                    return;
@@ -313,7 +313,7 @@ public class BoolaBoola{
            case 25:
                System.out.print("Does true || false && true have the value true(t/T) or false(f/F)?");
                String input25= myScanner.next(); 
-               boolean have25= true || false && true;
+               boolean have25= ((true || false) && true);
                if(input25.equals("t")||input25.equals("T")){
                    System.out.println("Correct");
                    return;
