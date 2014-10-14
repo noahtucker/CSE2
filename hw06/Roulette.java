@@ -2,6 +2,12 @@
 //10/14/14 
 //CSE 2
 
+
+//This program will use a random number generator 
+//to simulate this person’s betting on 100 spins of roulette, but it will run the simulation 
+//1000 times and collect data on the outcome. 
+
+
 public class Roulette{
     public static void main(String[] args){
          double hold= (Math.random()*38); //Creates a random number 
