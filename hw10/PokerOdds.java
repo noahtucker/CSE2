@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class PokerOdds{
   public static void main(String [] arg){
     showHands();
- //   simulateOdds();
+    simulateOdds();
   }
   //This method generates a poker hand of five cards. It does this 
   //using a series of arrays, for loops and a switch statement. It 
@@ -167,25 +167,104 @@ while(true){ //Creates an infinite loop to keep going while the user wants to
 }
  
   }
-/*  public static void simulateOdds(){
-      int counter=0; 
-      int duplicate=0; 
-      int[] counter1= new int[13]; 
-      for(int r=0; r<counter1.length; r++){
-          counter1[r]=0; 
+  public static void simulateOdds(){
+        //This is where I initialized everything I would need to remain 
+        //constant throughout the program 
+String cardName="";
+    int[] counter=new int[13];
+    int fullDeck[]= new int[52]; 
+    int hand[]= new int[5];
+ int holder= 0;
+ //Created a counter variable using an array and assigned it using a for loop 
+      for(int ui=0; ui<counter.length;ui++){
+          counter[ui]=0;
       }
-      while(counter<10000){
-          for(int f=0; f<5; f++){
-              System.out.println(hand[f]); 
-              //assume array has been passed through somehow
-              hand[f]=hand[f]%13; 
-              
+      //tells the program to run 10,000 times 
+      //This program will generate 10,000 hands and tell when there is exactly one
+      //pair. It will then tell which pair it was. 
+    for(int re=0; re<10000; re++){  
+        //The first two for loops are assigning values for indexes of arrays. 
+      for(int i=0; i<fullDeck.length;i++){
+          fullDeck[i]=i; 
+      }
+      
+
+      for(int k=0; k<hand.length;k++){
+          hand[k]=-1; 
+      }
+
+      
+      int x = 0;
+      //Takes the last value of the deck and eliminates it. 
+      //It also sets the value of hand to a card in the deck. 
+      for(int q=51;q>46;q--){
+            int card=(int) (Math.random()*52);
+            fullDeck[card]=fullDeck[q];
+            fullDeck[q]=-1;
+            hand[x]= card;
+            x++;
+      }
+      //Takes the rank of each card and sets it to that index in hand[]
+      for(int yu=0; yu<hand.length; yu++){
+        hand[yu]=hand[yu]%13; 
+      }
+      //if there is a duplicate, it checks to see where the duplicate is and increments
+      //a counter based on which number was chosen 
+      if(exactlyOneDup(hand)){
+      for(int h=0; h<hand.length; h++){
+          for(int g=h+1; g<hand.length; g++){
+          if(hand[h]==hand[g]){
+              counter[hand[h]]= counter[hand[h]]+1;
           }
-          if(FindDuplicates.exactlyOneDup(hand[])){
-                  
-              } 
-          counter++;
+          }
       }
+      }
+
+    }
+      System.out.println("A   "+counter[0]);
+      System.out.println("K   "+counter[1]);
+      System.out.println("Q   "+counter[2]);
+      System.out.println("J   "+counter[3]);
+      System.out.println("10  "+counter[4]);
+      System.out.println("9   "+counter[5]);
+      System.out.println("8   "+counter[6]);
+      System.out.println("7   "+counter[7]);
+      System.out.println("6   "+counter[8]);
+      System.out.println("5   "+counter[9]);
+      System.out.println("4   "+counter[10]);
+      System.out.println("3   "+counter[11]);
+      System.out.println("2   "+counter[12]);
+      int sum=0;
+      //Creates a sum to be used to tell how many were not duplicates
+      for(int uew=0; uew<counter.length;uew++){
+          sum+=counter[uew];
+      }
+      System.out.println("total not exactly one pair: "+(10000-sum)); 
+}
+ //This method checks to see if there is only one duplicate. It does this by using 4 nested loops 
+  //to check the values of all positions of the array against each other. If there are more than two
+  //of the same number or there are more than two pairs of numbers, the program returns false to the main method. 
+  public static Boolean exactlyOneDup(int[] j){ 
+      for(int i=0; i<j.length; i++){
+          for(int z=i+1; z<j.length;z++){ 
+                if(j[i]==j[z]){
+                    for(int k=z+1; k<j.length; k++){
+                        for(int y=k+1; y<j.length; y++){
+                            if(j[i]==j[k]){
+                                return false; 
+                            }
+                            else if(j[i]==j[z] && j[k]==j[y]){
+                                return false; 
+                            }
+                    }
+                    }
+                    return true;
+             } 
+          }
+          
+      }
+      return false; 
+}
 }
 
 
