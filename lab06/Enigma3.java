@@ -7,7 +7,7 @@
 import java.util.Scanner;
 public class Enigma3{
   public static void main(String [] arg){
-    int n=40,k=60;
+    int n=40,k=61;
     String out="";
     switch(k%14){
       case 12: 

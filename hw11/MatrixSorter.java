@@ -1,6 +1,4 @@
-import java.util.Scanner; 
-public class Trial2{
-    public static void main(String[] args){
+
     //Noah Tucker 
 //12/5/14
 //CSE2
@@ -16,7 +14,9 @@ show() prints out the array
 findMin() finds the smallest value in the printed array 
 sort() puts the array in order by row, and sets the first value of each row in order 
 */
-
+import java.util.Scanner; 
+public class MatrixSorter{
+    public static void main(String[] args){
     int mat3d[][][];
     mat3d=buildMat3d();
     show(mat3d);

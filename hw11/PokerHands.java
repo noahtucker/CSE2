@@ -6,7 +6,7 @@
 //in writing methods that have array parameters, and in searching and sorting arrays.
 
 import java.util.Scanner; 
-public class Trial{
+public class PokerHands{
 /*
 This method asks the user to enter 5 cards that they wish to selct 
 for their hand. If a nonexsistent value is entered, the program will alert the user.
@@ -76,7 +76,8 @@ if(scan.hasNextInt()){
         }  
 else{
         String f=scan.next(); 
-            for(int v=0; v<i; v++){
+                for(int v=0; v<i; v++){
+                 
                     if(hand[v]==hold){
                 System.out.println("You already chose that card.");
                 return;
@@ -134,7 +135,7 @@ This is done by either comparing the actual number or letter on the cards, or by
 In order to see if the cards entered were a straight (and only a straight),
 I created a new array called holder to store the values of hand, and then sort 
 them in ascending order. This allowed me to compare the actual card number or letter
-in order to ensure if it was a straight or not.
+in order to ensure if it was a straight or not. 
 */
         int[] holder= new int[hand.length]; 
                 for(int ui=0;ui<hand.length;ui++){
